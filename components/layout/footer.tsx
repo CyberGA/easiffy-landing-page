@@ -3,7 +3,7 @@ import AppLogo from "./app-logo";
 import { SlSocialFacebook } from "react-icons/sl";
 import { LuLinkedin } from "react-icons/lu";
 import { RiTwitterXLine, RiInstagramLine } from "react-icons/ri";
-import Image from "next/image";
+import DownloadApps from "./download-app"
 import { IoIosArrowForward } from "react-icons/io";
 
 
@@ -25,11 +25,6 @@ const socials: Array<{ icon: React.JSX.Element; link: string }> = [
   { icon: <RiInstagramLine size={18} />, link: "#" },
 ];
 
-const downloads: Array<{ text: string, img: string, link: string }> = [
-  { text: "Download on playstore", img: "/play-store.png", link: "#"},
-  { text: "Download on app store", img: "/app-store.png", link: "#"},
-]
-
 const usefulLinks: Array<{ text: string, link: string }> = [
   { text: "About Us", link: "#"},
   { text: "Contact Us", link: "#"},
@@ -41,7 +36,7 @@ export default function Footer(): React.JSX.Element {
   return (
     <footer className="bg-custom-black/90 text-white">
       <div className="px-6 py-20">
-        <div className="flex gap-14 lg:gap-6 justify-between w-full max-w-6xl mx-auto flex-wrap">
+        <div className="flex gap-14 lg:gap-6 justify-between w-full max-w-7xl mx-auto flex-wrap">
           <div className="w-full min-w-[280px] max-w-xs">
             <AppLogo />
             <p className="my-4">
@@ -61,39 +56,27 @@ export default function Footer(): React.JSX.Element {
             </div>
             <div className="mt-5">
               <h1 className="font-medium text-2xl">Download Our App</h1>
-              <div className="flex gap-2 mt-2">
-                {downloads.map((download, index) => (
-                  <Link
-                    key={index}
-                    href={download.link}
-                    className="relative z-0 rounded-md w-fit h-fit overflow-hidden"
-                  >
-                    <span className="bg-white absolute z-0 inset-y-0.5 inset-x-0.5"></span>
-                    <Image
-                      src={download.img}
-                      blurDataURL={download.img}
-                      alt={download.text}
-                      width={200}
-                      height={180}
-                      objectFit="cover"
-                      className="relative z-[1] hover:scale-105 duration-300"
-                    />
-                  </Link>
-                ))}
-              </div>
+              <DownloadApps />
             </div>
           </div>
           <div className="w-full min-w-[280px] max-w-xs overflow-hidden">
-            <h1 className="font-medium text-2xl font-recoleta text-left">Useful Links</h1>
+            <h1 className="font-medium text-2xl font-recoleta text-left">
+              Useful Links
+            </h1>
             <div className="flex flex-col gap-3 my-4">
-              {
-                usefulLinks.map((data, index) => (
-                  <Link key={index} href={data.link} className="flex items-center gap-2 text-sm text-secondary-gray-80 hover:text-primary-60 duration-300 hover:svg:translate-x-0">
-                    <IoIosArrowForward size={14} className="text-primary-60" />
-                    <p>{data.text}</p>
-                  </Link>
-                ))
-              }
+              {usefulLinks.map((data, index) => (
+                <Link
+                  key={index}
+                  href={data.link}
+                  className="flex items-center gap-1 text-sm text-secondary-gray-80 hover:text-primary-60 duration-300 group/useful"
+                >
+                  <IoIosArrowForward
+                    size={14}
+                    className="text-primary-60 hidden transform -translate-x-full transition-transform duration-700 group-hover/useful:inline group-hover/useful:translate-x-0"
+                  />
+                  <p>{data.text}</p>
+                </Link>
+              ))}
             </div>
           </div>
           <div className="w-full min-w-[280px] h-fit max-w-sm bg-primary-60 rounded-md px-4 py-6 border border-white/20 shadow-md">

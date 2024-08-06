@@ -32,7 +32,11 @@ function Header(): React.JSX.Element {
     <header
       className={cn(
         "fixed z-20 top-0 left-0 right-0 h-20 transition-colors duration-300",
-        bg ? "bg-white back shadow-sm border-b text-secondary-gray-40" : pathname == "/" ? "bg-transparent text-white" : "text-secondary-gray-40"
+        bg
+          ? "bg-white back shadow-sm border-b text-secondary-gray-40"
+          : pathname == "/"
+          ? "bg-transparent text-white"
+          : "text-secondary-gray-40"
       )}
     >
       <div className="h-full flex items-center justify-between px-14">
@@ -42,10 +46,8 @@ function Header(): React.JSX.Element {
           <Link
             href="/"
             className={cn(
-              "hover:text-primary-orange61 hover:font-semibold duration-300",
-              pathname == "/"
-                ? "text-primary-4A font-bold"
-                : ""
+              "hover:text-primary-4A hover:font-semibold duration-300",
+              pathname == "/" ? "text-primary-4A font-bold" : ""
             )}
           >
             Home
@@ -56,9 +58,7 @@ function Header(): React.JSX.Element {
               href={nav.href}
               className={cn(
                 "hover:text-primary-4A hover:font-semibold duration-300",
-                pathname.startsWith(nav.href)
-                  ? "text-primary-4A font-bold"
-                  : ""
+                pathname.startsWith(nav.href) ? "text-primary-4A font-bold" : ""
               )}
             >
               {nav.text}
@@ -66,12 +66,16 @@ function Header(): React.JSX.Element {
           ))}
         </div>
 
-        <Link
-          href="#"
-          className="border-2 border-primary-4A text-primary-4A font-medium hover:bg-primary-4A hover:text-white py-2 px-4 rounded-lg duration-300"
-        >
-          Get Started
-        </Link>
+        {!pathname.startsWith("/get%20started") ? (
+          <Link
+            href="/get started"
+            className="border-2 border-primary-4A text-primary-4A font-medium hover:bg-primary-4A hover:text-white py-2 px-4 rounded-lg duration-300"
+          >
+            Get Started
+          </Link>
+        ) : (
+          <span></span>
+        )}
       </div>
     </header>
   );

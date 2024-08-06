@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Intro from "@/components/home/intro"
 import Services from "@/components/home/services"
+import Effortless from "@/components/home/effortless";
+import ClientFeedback from "@/components/home/feedbacks";
 
 export const metadata: Metadata = {
   title: "Home | Easiffy",
@@ -12,6 +14,8 @@ export default function Home() {
     <>
       <Intro />
       <Services />
+      <Effortless />
+      <ClientFeedback />
     </>
   );
 }
