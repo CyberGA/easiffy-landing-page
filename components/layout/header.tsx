@@ -1,32 +1,37 @@
 "use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import AppLogo from "./app-logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-const navs: Array<{text: string, href: string}> = [{text: "About", href: "/about"}, {text: "Contact Us", href: "/contact"}, { text: "FAQs", href: "/faqs"}];
+const navs: Array<{ text: string; href: string }> = [
+  { text: "About", href: "/about" },
+  { text: "Contact Us", href: "/contact" },
+  { text: "Terms of Servive", href: "/terms%20and%20conditions" },
+  { text: "Privacy Policy", href: "/privacy%20policy" },
+];
 
 function Header(): React.JSX.Element {
-    const pathname = usePathname();
-    const [bg, setBg] = useState<boolean>(false)
+  const pathname = usePathname();
+  const [bg, setBg] = useState<boolean>(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if(window.scrollY > 100) {
-                setBg(bg => true)
-            } else {
-                setBg(bg => false)
-            }
-        }
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setBg((bg) => true);
+      } else {
+        setBg((bg) => false);
+      }
+    };
 
-        window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, [])
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header

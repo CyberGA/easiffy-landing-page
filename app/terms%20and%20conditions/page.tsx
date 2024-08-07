@@ -1,6 +1,7 @@
 
 
 import { Metadata } from "next";
+import TermsConditions from "@/components/terms/terms-conditions"
 
 export const metadata: Metadata = {
   title: "Terms and Condiditions | Easiffy",
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <div className="mt-20">Terms and Condiditions</div>;
+  return <TermsConditions />;
 }

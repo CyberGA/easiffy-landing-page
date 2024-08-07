@@ -1,5 +1,6 @@
 
 
+import Privacy from "@/components/terms/privacy";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <div className="mt-20">Privacy Policy</div>;
+  return <Privacy />;
 }

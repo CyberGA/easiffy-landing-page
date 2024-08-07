@@ -1,5 +1,8 @@
 
 
+import FAQs from "@/components/about/faqs";
+import Intro from "@/components/about/intro";
+import MissionVision from "@/components/about/mission";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,5 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <div className="mt-20">About Us</div>;
+  return <>
+    <Intro />
+    <MissionVision />
+    <FAQs />
+  </>;
 }

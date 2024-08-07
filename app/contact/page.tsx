@@ -1,5 +1,6 @@
 
 
+import ContactUs from "@/components/contact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,9 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return (
-    <div className="mt-20">
-        Contact us
-    </div>
-  );
+  return <ContactUs />;
 }

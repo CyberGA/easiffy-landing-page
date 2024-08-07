@@ -26,10 +26,10 @@ const socials: Array<{ icon: React.JSX.Element; link: string }> = [
 ];
 
 const usefulLinks: Array<{ text: string, link: string }> = [
-  { text: "About Us", link: "#"},
-  { text: "Contact Us", link: "#"},
-  { text: "FAQs", link: "#"},
-  { text: "Getting Started", link: "#"},
+  { text: "About Us", link: "/about"},
+  { text: "Contact Us", link: "/contact"},
+  { text: "FAQs", link: "/about/#faqs"},
+  { text: "Getting Started", link: "/get started"},
 ]
 
 export default function Footer(): React.JSX.Element {
