@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Lilita_One } from 'next/font/google';
+import { Platypi, Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
@@ -7,23 +7,24 @@ import ScrollToTop from "@/components/layout/scroll-to-top";
 import localFont from "next/font/local";
 import NavigatingLoading from "@/components/layout/loading";
 
-const poppins = Poppins({
+
+const raleway = Raleway({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-raleway",
 });
 
-const lilita = Lilita_One({
+const platypi = Platypi({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-lilita",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-platypi",
 });
 
 const recoleta = localFont({
   src: "../public/fonts/Recoleta/recoleta-regular.otf",
   display: "swap",
   variable: "--font-recoleta",
-})
+});
 
 export const metadata: Metadata = {
   title: "Easiffy",
@@ -37,7 +38,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${lilita.variable} ${recoleta.variable}`}>
+      <body
+        className={`${recoleta.variable} ${platypi.variable} ${raleway.variable}`}
+      >
         <NavigatingLoading />
         <Header />
         <main>{children}</main>

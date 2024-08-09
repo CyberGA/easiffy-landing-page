@@ -372,8 +372,8 @@ const tabs: ["User", "Affiliate"] = ["User", "Affiliate"]
 function FAQRow({ data }: { data: IQuestion }): React.JSX.Element {
   return (
     <AccordionItem value={data.question}>
-      <AccordionTrigger className="pl-2 pr-4 text-left font-poppins hover:text-primary-4A ">
-          {data.question}
+      <AccordionTrigger className="pl-2 pr-4 text-left font-platypi hover:text-primary-4A ">
+        {data.question}
       </AccordionTrigger>
       <AccordionContent className="px-3 text-primary-dark32">
         {data.answer}
@@ -392,7 +392,7 @@ export default function FAQs(): React.JSX.Element {
       <div className="w-full max-w-6xl mx-auto">
         <div className="max-w-3xl w-full mx-auto mb-10">
           <div className="w-full mb-5">
-            <h1 className="text-[40px] leading-[1] text-primary-orange61 font-lilita text-center">
+            <h1 className="text-[40px] leading-[1] text-primary-orange61 text-center">
               Frequently Asked Questions
             </h1>
             <div className="flex gap-2 p-2 rounded-lg mt-4 bg-primary-D9/10">

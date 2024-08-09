@@ -14,8 +14,8 @@ const items: Array<{ title: string; desc: string }> = [
 
 export default function MissionVision(): React.JSX.Element {
     return (
-      <section className="relative z-0 py-20 px-6 text-custom-dark bg-[url('/clients.jpg')] bg-no-repeat bg-cover bg-center">
-        <div className="absolute z-0 top-0 bottom-0 left-0 right-0 bg-primary-60/10"></div>
+      <section className="relative z-0 py-20 px-6 text-custom-dark bg-[url('/about-bg.jpeg')] bg-no-repeat bg-cover bg-center">
+        <div className="absolute z-0 top-0 bottom-0 left-0 right-0 bg-black/40"></div>
         <div className="relative z-[1] flex flex-col sm:flex-row gap-9 justify-between w-full max-w-5xl mx-auto">
           {items.map((item, index) => (
             <div

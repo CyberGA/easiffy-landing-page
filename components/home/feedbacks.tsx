@@ -97,7 +97,7 @@ export default function ClientFeedback(): React.JSX.Element {
           {feedbacks.map((feedback, index) => (
             <SwiperSlide key={index}>
               <div className="p-4 bg-white rounded-lg border w-full max-w-full xs:max-w-xs mb-16">
-                <h2 className="text-xl font-bold mb-2 font-poppins">
+                <h2 className="text-xl font-bold mb-2 font-platypi">
                   {feedback.title}
                 </h2>
                 <p className="text-sm mb-4">{feedback.desc}</p>

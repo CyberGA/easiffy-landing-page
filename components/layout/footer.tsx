@@ -25,12 +25,13 @@ const socials: Array<{ icon: React.JSX.Element; link: string }> = [
   { icon: <RiInstagramLine size={18} />, link: "#" },
 ];
 
-const usefulLinks: Array<{ text: string, link: string }> = [
-  { text: "About Us", link: "/about"},
-  { text: "Contact Us", link: "/contact"},
-  { text: "FAQs", link: "/about/#faqs"},
-  { text: "Getting Started", link: "/get started"},
-]
+const usefulLinks: Array<{ text: string; link: string }> = [
+  { text: "About Us", link: "/about" },
+  { text: "Contact Us", link: "/contact" },
+  { text: "FAQs", link: "/about/#faqs" },
+  { text: "Getting Started", link: "/get started" },
+  { text: "How It Works", link: "/#how_it_works" },
+];
 
 export default function Footer(): React.JSX.Element {
   return (
@@ -60,7 +61,7 @@ export default function Footer(): React.JSX.Element {
             </div>
           </div>
           <div className="w-full min-w-[280px] max-w-xs overflow-hidden">
-            <h1 className="font-medium text-2xl font-recoleta text-left">
+            <h1 className="font-medium text-2xl font-platypi text-left">
               Useful Links
             </h1>
             <div className="flex flex-col gap-3 my-4">

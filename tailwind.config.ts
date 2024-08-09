@@ -19,10 +19,9 @@ const config = {
     },
     extend: {
       fontFamily: {
-        poppins: ["var(--font-poppins)"],
         ppmontreal: ["var(--font-ppmontreal)"],
-        recoleta: ["var(--font-recoleta)"],
-        lilita: ["var(--font-lilita)"],
+        platypi: ["var(--font-platypi)"],
+        raleway: ["var(--font-raleway)"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -33,10 +32,6 @@ const config = {
         custom: {
           black: "#010101",
           red: "#EA1919",
-          nav: {
-            "active-bg": "#00D30826",
-            "active-text": "#008B06",
-          },
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

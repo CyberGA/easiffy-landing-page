@@ -60,7 +60,7 @@ export default function MessageForm(): React.JSX.Element {
         className="bg-white/60 backdrop-blur-md h-full space-y-5 max-w-lg sm:max-w-lg w-full  min-w-sm pb-10 sm:w-full px-6 rounded-lg ml-auto fade-in-30 text-secondary-gray-40"
       >
         <div>
-          <h2 className="text-3xl text-secondary-gray-40 font-lilita mt-20">
+          <h2 className="text-3xl text-secondary-gray-40 mt-20">
             SEND US A MESSAGE
           </h2>
         </div>

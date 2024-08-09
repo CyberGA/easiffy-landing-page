@@ -28,9 +28,8 @@ const userCondition: Array<ITerms> = [
           "refers to text, graphics, images, music, software, audio, video, information, or other materials that can be posted, uploaded, linked to, or otherwise made available through our services.",
       },
       {
-        subHeadine: '"User"',
-        content:
-          '"you", and “your" refer to the individual accessing or using our services.',
+        subHeadine: '"User", "you", and “your"',
+        content: "refer to the individual accessing or using our services.",
       },
       {
         subHeadine: '"Services"',
@@ -547,20 +546,22 @@ const affiliateCondition: Array<ITerms> = [
 const ConditionTile: React.FC<ITerms> = (condition) => {
   return (
     <div className="flex flex-col sm:flex-row gap-5 mt-3">
-      <h4 className="font-semibold font-poppins text-primary-60 max-w-[200px] w-full">
+      <h4 className="font-extralight text-xl text-primary-60 max-w-[200px] w-full">
         {condition.title}
       </h4>
       <div className="flex flex-col gap-2 text-secondary-gray-40">
         {condition.data.map((data, index) => (
           <div key={index} className="flex flex-col gap-2">
             {data.headline && (
-              <h5 className="font-medium font-poppins italic">
+              <h5 className="font-extralight text-custom-black text-lg italic">
                 {data.headline}
               </h5>
             )}
             <p className="text-secondary-gray-80">
               {data.subHeadine && (
-                <span className="font-bold">{data.subHeadine}</span>
+                <span className="font-bold text-custom-black">
+                  {data.subHeadine}
+                </span>
               )}{" "}
               {data.content}
             </p>

@@ -10,7 +10,7 @@ export default function Effortless(): React.JSX.Element {
       <h1 className="text-5xl text-center mb-16 text-black/80">
         Making It Effortless For You
       </h1>
-      <div className="flex items-center justify-between gap-5 flex-col md:flex-row w-full max-w-7xl mx-auto p-10 rounded-lg">
+      <div className="flex items-center justify-between gap-14 sm:gap-5 flex-col md:flex-row w-full max-w-5xl mx-auto p-10 rounded-lg">
         <Image
           src="/mobile-screen.png"
           alt="Mobile applications"

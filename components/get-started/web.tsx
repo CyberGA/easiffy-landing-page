@@ -7,11 +7,11 @@ export default function EasiffyWeb(): React.JSX.Element {
       className="py-20 px-6 text-custom-black bg-primary-D9/30"
       id="use-web"
     >
-      <h1 className="text-6xl text-center mb-16 text-primary-60">
+      <h1 className="text-5xl sm:text-6xl text-center mb-16 text-primary-60">
         Easiffy Web
       </h1>
-      <div className="flex items-center justify-between gap-5 flex-col md:flex-row w-full max-w-7xl mx-auto p-10 rounded-lg">
-        <div className="w-full max-w-md">
+      <div className="flex items-center justify-between gap-5 flex-col md:flex-row w-full max-w-5xl mx-auto p-10 rounded-lg">
+        <div className="w-full max-w-md mb-7 md:mb-0">
           <h4 className="text-4xl text-custom-black/80">
             Access Your Dashboard from any web browser
           </h4>

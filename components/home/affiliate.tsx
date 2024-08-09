@@ -44,7 +44,7 @@ function Affiliate(): React.JSX.Element {
                             <p className="w-full text-base mt-2 text-secondary-gray-40 px-5 line-clamp-5 visible group-hover/desc:invisible duration-100">{item.desc}</p>
                         </div>
                         <div className="absolute z-[1] inset-y-0 inset-x-0 transform -translate-y-full transition-transform group-hover/desc:translate-y-0 fade-in bg-black/50 backdrop-blur-sm text-white p-5 duration-500">
-                            <div className="flex flex-col gap-2 justify-end h-full">
+                            <div className="flex flex-col gap-2 justify-end h-full duration-300">
                                 <p className="w-full text-base mt-2 text-white duration-100">{item.desc}</p>
                                 <Link
                                   href="/get started"
