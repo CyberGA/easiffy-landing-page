@@ -67,12 +67,12 @@ export default function Pricing() {
             Tailored Pricing Solutions
           </h1>
         </div>
-        <div className="mt-10 w-full max-w-6xl">
-          <div className="flex items-center flex-wrap justify-center gap-6">
+        <div className="mt-10 w-full max-w-7xl">
+          <div className="w-full flex items-center flex-wrap justify-center gap-6">
             {prices.map((price) => (
               <div
                 key={price.tag}
-                className=" w-full max-w-full min-w-0 sm:min-w-[250px] sm:max-w-sm bg-white border shadow-md rounded-lg p-6 relative z-0 group/price overflow-hidden "
+                className=" w-full max-w-full min-w-0 sm:min-w-[200px] sm:max-w-sm bg-white border shadow-md rounded-lg p-6 relative z-0 group/price overflow-hidden "
               >
                 <div className="absolute inset-0 z-0 translate-y-full group-hover/price:translate-y-0 group-hover/price:bg-primary-60 transform duration-300"></div>
                 <div className="relative z-[1] text-custom-black group-hover/price:text-white duration-300">
@@ -109,7 +109,9 @@ export default function Pricing() {
                     <span>EXPLORE MORE</span>
                     <MdOutlineKeyboardArrowRight />
                   </Link>
-                  <p className="text-sm text-secondary-gray-40 mt-8">*{price.caption}</p>
+                  <p className="text-sm text-secondary-gray-40 mt-8">
+                    *{price.caption}
+                  </p>
                 </div>
               </div>
             ))}
