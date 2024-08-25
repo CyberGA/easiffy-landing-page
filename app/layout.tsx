@@ -6,6 +6,7 @@ import Footer from "@/components/layout/footer";
 import ScrollToTop from "@/components/layout/scroll-to-top";
 import localFont from "next/font/local";
 import NavigatingLoading from "@/components/layout/loading";
+import { Toaster } from "sonner";
 
 
 const raleway = Raleway({
@@ -47,6 +48,7 @@ export default function RootLayout({
         <Footer />
         <ScrollToTop />
       </body>
+      <Toaster />
     </html>
   );
 }

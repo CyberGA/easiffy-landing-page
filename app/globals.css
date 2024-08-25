@@ -71,7 +71,12 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-raleway font-extrabold;
   }
-  .swiper-pagination-bullet-active {
+}
+
+.swiper .swiper-pagination-bullet-active {
     @apply !bg-primary-60;
   }
+
+.services__carousel::-webkit-scrollbar {
+	display: none !important;
 }

@@ -1,34 +1,45 @@
+import Image from "next/image";
 
-
-
-const items: Array<{ title: string; desc: string }> = [
+const items: Array<{ title: string; desc: string; img: string }> = [
   {
-    title: "OUR MISSION",
-    desc: "Innovation isn't just a component; it's the heartbeat of our business DNA. By fostering seamless collaboration and ensuring timely delivery, we empower you to confidently reach your digital goals, from conception to realization.",
+    title: "Our Mission",
+    desc: "Innovation isn't just a component; it's the heartbeat of our business DNA. By fostering seamless collaboration and ensuring timely delivery, we empower you to confidently reach your digital goals, from conception to realization.",
+    img: "/mission.jpg",
   },
   {
-    title: "OUR VISION",
-    desc: "In charting the path ahead, Easiffy aspires to be the vanguard of digital innovation, forging new pathways that revolutionize service delivery and empower businesses worldwide."
+    title: "Our Vision",
+    desc: "In charting the path ahead, Easiffy aspires to be the vanguard of digital innovation, forging new pathways that revolutionize service delivery and empower businesses worldwide.",
+    img: "/our_vision.jpg",
   },
 ];
 
 export default function MissionVision(): React.JSX.Element {
-    return (
-      <section className="relative z-0 py-20 px-6 text-custom-dark bg-[url('/about-bg.jpeg')] bg-no-repeat bg-cover bg-center">
-        <div className="absolute z-0 top-0 bottom-0 left-0 right-0 bg-black/40"></div>
-        <div className="relative z-[1] flex flex-col sm:flex-row gap-9 justify-between w-full max-w-5xl mx-auto">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center gap-6 w-full bg-black/30 border border-white/50 h- max-w-4xl mx-auto backdrop-blur-md rounded-lg p-5 shadow-md shadow-primary-60/20 duration-300"
-            >
-              <h1 className="text-3xl w-full max-w-4xl leading-[1.2] text-white">
+  return (
+    <section className="py-20 px-6 text-custom-dark">
+      <div className="flex flex-col md:flex-row gap-9 justify-center w-full max-w-4xl mx-auto">
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className="h-full w-full max-w-2xl rounded-lg border px-5 pt-5 shadow-md duration-300 overflow-hidden"
+          >
+            <div className="space-y-6 w-full pb-5 mt-2">
+              <h1 className="text-3xl leading-[1.2] text-primary-60 font-raleway">
                 {item.title}
               </h1>
-              <p className="mt-5 text-xl text-white">{item.desc}</p>
+              <p className="mt-5 text-base">{item.desc}</p>
             </div>
-          ))}
-        </div>
-      </section>
-    );
+            <div className="px-5 mt-5">
+              <Image
+                src={item.img}
+                alt={item.title}
+                width={300}
+                height={300}
+                className="w-full max-w-sm h-full mx-auto rounded-t-lg"
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

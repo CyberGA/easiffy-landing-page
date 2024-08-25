@@ -65,9 +65,9 @@ export default function ClientFeedback(): React.JSX.Element {
 
   if (!feedbacks) return <></>
   return (
-    <section className="bg-no-repeat bg-cover bg-center py-20 px-6 text-custom-black">
+    <section className="py-20 px-6 text-custom-black">
       <div className="w-full max-w-7xl mx-auto">
-        <h1 className="text-5xl text-center text-primary-60 mb-16">
+        <h1 className="text-3xl md:text-5xl text-center text-primary-60 mb-16">
           Proven Track of Satisfied Clients
         </h1>
       </div>

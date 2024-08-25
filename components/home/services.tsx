@@ -1,83 +1,63 @@
-import { PiProjectorScreenChartLight } from "react-icons/pi";
-import { MdDoubleArrow } from "react-icons/md";
-import { IoIosArrowForward } from "react-icons/io";
-import { FaArrowRightLong } from "react-icons/fa6";
-import Image from "next/image"
+"use client";
 
+import { useState, useRef, useEffect } from "react";
+import { IoIosArrowForward } from "react-icons/io";
+
+import { FaArrowRightLong } from "react-icons/fa6";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+
+import Image from "next/image";
+import { BiSolidRightArrow } from "react-icons/bi";
 
 interface IService {
   title: string;
   desc: string;
   link: string;
-  icon: React.ReactNode;
   img: string;
 }
 
 const serviceList: Array<IService> = [
   {
-    title: "Web Development",
-    desc: "We build websites that are fast, secure, and easy to manage.",
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart..",
     link: "#",
-    icon: (
-      <Image
-        src="/design-develop.webp"
-        alt="design and develop"
-        width={100}
-        height={100}
-      />
-    ),
-    img: "/web-dev.jpeg",
+    img: "/writing-service.jpeg",
   },
   {
-    title: "Mobile Development",
-    desc: "We build mobile apps that are fast, secure, and easy to manage.",
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart..",
     link: "#",
-    icon: <PiProjectorScreenChartLight size={80} />,
-    img: "/web-dev-2.jpeg",
+    img: "/writing-service.jpeg",
   },
   {
-    title: "UI/UX Design",
-    desc: "We design user interfaces that are fast, secure, and easy to manage.",
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart..",
     link: "#",
-    icon: <PiProjectorScreenChartLight size={80} />,
-    img: "/web-dev.jpeg",
+    img: "/writing-service.jpeg",
   },
   {
-    title: "Digital Marketing",
-    desc: "We market your products and services to the right audience.",
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
     link: "#",
-    icon: (
-      <Image
-        src="/design-box.png"
-        alt="design and develop"
-        width={100}
-        height={100}
-      />
-    ),
-    img: "/web-dev-2.jpeg",
+    img: "/writing-service.jpeg",
   },
 ];
 
 const ServiceCard: React.FC<IService> = (service) => {
   return (
-    <div className="w-full max-w-md min-[380px]:max-w-xs sm:max-w-sm 2xl:max-w-[250px] bg-white py-14 px-5 border border-black/10 rounded-md text-custom-black text-left  hover:shadow-lg duration-300 group/img group/icon">
-      <h2 className="text-xl  font-platypi font-bold text-primary-60">
-        {service.title}
-      </h2>
-      <div className="w-full h-[220px] relative z-0 my-10 overflow-hidden rounded-sm">
-        <div className="absolute z-[2] bg-white size-20 rotate-45 -left-10 -top-10"></div>
-        <div className="absolute z-[2] bg-white size-20 rotate-45 -right-10 -bottom-10"></div>
+    <div className="w-[320px] min-w-[320px] bg-white py-3 px-5 border border-black/10 rounded-md text-custom-black text-left  hover:shadow-lg duration-300 cursor-pointer">
+      <div className="w-full h-[220px] overflow-hidden rounded-sm mb-6">
         <Image
           src={service.img}
           alt={service.title}
           width={160}
-          height={160}
-          className="absolute z-[1] w-full -translate-y-full group-hover/img:translate-y-0 duration-300"
+          height={325}
+          className="w-full rounded-sm"
         />
-        <div className="flex items-center justify-center absolute z-[0] w-full h-full bg-primary-D9/30 text-secondary-gray-40 translate-y-0 group-hover/icon:translate-y-full rounded-sm duration-300">
-          {service.icon}
-        </div>
       </div>
+      <h2 className="text-xl  font-platypi font-bold text-primary-60">
+        {service.title}
+      </h2>
       <p className="text-base text-secondary-gray-40 line-clamp-3">
         {service.desc}
       </p>
@@ -93,23 +73,84 @@ const ServiceCard: React.FC<IService> = (service) => {
 };
 
 const Services: React.FC = () => {
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const slideBack = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: -340,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const slideFront = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: 340,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const handleScroll = () => {
+    if (containerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+      setShowLeftArrow(scrollLeft > 0);
+      setShowRightArrow(scrollLeft + clientWidth < scrollWidth);
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+  }, []);
+
   return (
     <section className="text-custom-black px-5 pt-10 pb-32" id="services">
       <div className="h-10"></div>
-      <div className="flex flex-col items-center w-full max-w-7xl mx-auto text-center">
+      <div className="flex flex-col items-center w-full max-w-7xl mx-auto text-center relative">
         <div className="flex items-center text-sm text-primary-60 font-semibold mt-10">
-          <MdDoubleArrow size={16} />
+          <div className="flex items-center w-fit">
+            <BiSolidRightArrow size={12} />
+            <BiSolidRightArrow size={12} className="-ml-1" />
+          </div>
           <p>SERVICES WE PROVIDE</p>
         </div>
-        <h1 className="text-5xl my-3">Innovative Solutions for Talents</h1>
+        <h1 className="text-3xl md:text-5xl my-3">
+          Innovative Solutions for Talents
+        </h1>
         <p className="text-base text-secondary-gray-7F w-full max-w-md mx-auto">
           Long established fact that a reader will be distracted by the readable
           content of a page.
         </p>
-        <div className="flex flex-wrap w-full max-w-4xl 2xl:max-w-full justify-center gap-5 mt-10">
-          {serviceList.map((service) => (
-            <ServiceCard {...service} key={service.title} />
-          ))}
+        <div className="relative w-full max-w-7xl">
+          <div
+            className="relative flex w-full max-w-6xl gap-5 mt-10 mx-auto overflow-x-auto services__carousel"
+            ref={containerRef}
+            onScroll={handleScroll}
+          >
+            {serviceList.map((service) => (
+              <ServiceCard {...service} key={service.title} />
+            ))}
+          </div>
+          {showLeftArrow && (
+            <div
+              onClick={slideBack}
+              className="size-10 rounded-full border text-black flex items-center justify-center absolute z-[1] -left-4 top-1/2 transform -translate-y-1/2 bg-white cursor-pointer"
+            >
+              <MdKeyboardArrowLeft size={14} />
+            </div>
+          )}
+          {showRightArrow && (
+            <div
+              onClick={slideFront}
+              className="absolute z-[1] -right-4 top-1/2 transform -translate-y-1/2 border text-black flex items-center justify-center cursor-pointer bg-white size-10 rounded-full"
+            >
+              <MdKeyboardArrowRight size={16} />
+            </div>
+          )}
         </div>
       </div>
     </section>
