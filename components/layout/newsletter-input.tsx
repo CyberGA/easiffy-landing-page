@@ -30,14 +30,13 @@ export default function NewsletterInput() {
     },
   });
 
-  const handleSubscribe = (values: z.infer<typeof formSchema>) => {
+  const handleSubscribe = async (values: z.infer<typeof formSchema>) => {
     setLoading(true);
     try {
-      axios.post("/newsletter", { email: values.email }).then((res) => {
-        toast.success("Newsletter Subscription successful");
-        form.reset();
-        setLoading(false);
-      });
+      await axios.post("/newsletter", { email: values.email });
+      toast.success("Newsletter Subscription successful");
+      form.reset();
+      setLoading(false);
     } catch (error) {
       toast.error("Failed to subscribe");
       setLoading(false);

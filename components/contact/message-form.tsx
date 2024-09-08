@@ -8,11 +8,12 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
 } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import axios from "@/lib/axios";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z
@@ -48,9 +49,27 @@ export default function MessageForm(): React.JSX.Element {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setError("");
     setLoading(true);
-    console.log(values);
+    setError("");
+
+    const data = {
+      name: values.name,
+      email: values.email,
+      subject: values.subject,
+      message: values.message,
+    };
+
+    try {
+      await axios.post("/contact", data);
+      toast.success(
+        `Message sent successfully! We will reach back as soon as possible`
+      );
+      form.reset();
+      setLoading(false);
+    } catch (error) {
+      toast.error("Failed to subscribe");
+      setLoading(false);
+    }
   }
 
   return (
@@ -60,9 +79,7 @@ export default function MessageForm(): React.JSX.Element {
         className="bg-white/60 backdrop-blur-md h-full space-y-5 max-w-lg sm:max-w-lg w-full  min-w-sm pb-10 sm:w-full px-6 rounded-lg ml-auto fade-in-30 text-secondary-gray-40"
       >
         <div>
-          <h2 className="text-3xl text-secondary-gray-40 mt-20">
-            SEND US A MESSAGE
-          </h2>
+          <h2 className="text-3xl text-primary-6B mt-20">SEND US A MESSAGE</h2>
         </div>
         {!!error && (
           <div className="relative w-full rounded-lg border px-4 py-3 text-sm border-destructive/50 text-destructive flex items-center gap-2">
@@ -75,9 +92,7 @@ export default function MessageForm(): React.JSX.Element {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                Your Name:
-              </FormLabel>
+              <FormLabel>Your Name:</FormLabel>
               <FormControl>
                 <input
                   placeholder="John Doe"
@@ -85,7 +100,6 @@ export default function MessageForm(): React.JSX.Element {
                   className="w-full h-10 rounded-md placeholder:text-black/50 placeholder:text-sm placeholder:font-normal px-5 text-primary-dark32 border border-primary-dark32/70 focus-visible:outline-none focus:outline-none"
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -94,9 +108,7 @@ export default function MessageForm(): React.JSX.Element {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                Your Email:
-              </FormLabel>
+              <FormLabel>Your Email:</FormLabel>
               <FormControl>
                 <input
                   placeholder="email@example.com"
@@ -104,7 +116,6 @@ export default function MessageForm(): React.JSX.Element {
                   className="w-full h-10 rounded-md placeholder:text-black/50 placeholder:text-sm placeholder:font-normal px-5 text-primary-dark32 border border-primary-dark32/70 focus-visible:outline-none focus:outline-none"
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -113,9 +124,7 @@ export default function MessageForm(): React.JSX.Element {
           name="subject"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                Subject:
-              </FormLabel>
+              <FormLabel>Subject:</FormLabel>
               <FormControl>
                 <input
                   placeholder="Subject"
@@ -123,7 +132,6 @@ export default function MessageForm(): React.JSX.Element {
                   className="w-full h-10 rounded-md placeholder:text-black/50 placeholder:text-sm placeholder:font-normal px-5 text-primary-dark32 border border-primary-dark32/70 focus-visible:outline-none focus:outline-none"
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
@@ -132,9 +140,7 @@ export default function MessageForm(): React.JSX.Element {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>
-                Your Message:
-              </FormLabel>
+              <FormLabel>Your Message:</FormLabel>
               <FormControl>
                 <textarea
                   placeholder="Enter Your Message"
@@ -142,13 +148,13 @@ export default function MessageForm(): React.JSX.Element {
                   className="w-full h-32 py-2 resize-none rounded-md placeholder:text-black/50 placeholder:text-sm placeholder:font-normal px-5 text-primary-dark32 border border-primary-dark32/70 focus-visible:outline-none focus:outline-none"
                 />
               </FormControl>
-              <FormMessage />
             </FormItem>
           )}
         />
         <div className="flex items-center justify-end gap-2 mt-4 mb-10">
           <button
             type="submit"
+            disabled={loading}
             className="w-full px-4 py-3 text-white text-base bg-primary-60 rounded-md hover:bg-primary-orange61 duration-300"
           >
             {loading ? "Loading..." : "Send Message"}

@@ -1,6 +1,6 @@
 import Intro from "@/components/about/intro";
 import MissionVision from "@/components/about/mission";
-import TeamMembers from "@/components/about/team";
+import TeamMembers from "@/components/about/teams";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

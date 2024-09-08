@@ -32,12 +32,12 @@ const infos: Array<IContactInfo> = [
 const InfoTile: React.FC<IContactInfo> = (info) => {
   const Icon = info.icon;
   return (
-    <div className="px-4 py-5 rounded-lg border w-full min-w-[250px] flex-1 max-w-sm">
+    <div className="px-4 py-5 rounded-lg border w-full min-w-[250px] flex-1 max-w-sm bg-white">
       <div className="flex items-center justify-center size-10 text-primary-60 bg-primary-D9/30 rounded-full mx-auto mb-1">
         <Icon size={14} />
       </div>
       <div className="flex flex-col items-center">
-        <h4 className="text-secondary-gray-40">{info.title}</h4>
+        <h4 className="text-primary-6B">{info.title}</h4>
         <p className="text-secondary-gray-80 tex-sm">{info.value}</p>
       </div>
     </div>

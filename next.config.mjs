@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: "picsum.photos",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "easiffy.onrender.com",
+        port: "",
+        pathname: "/upload-dir/*/**",
+      },
     ],
   },
 };
