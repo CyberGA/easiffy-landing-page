@@ -5,7 +5,6 @@ import { LuLinkedin } from "react-icons/lu";
 import { RiTwitterXLine, RiInstagramLine } from "react-icons/ri";
 import DownloadApps from "./download-app";
 import { IoIosArrowForward } from "react-icons/io";
-import Newsletter from "./newsletter";
 
 type FooterUsefulLinks = {
   title: string;
@@ -40,13 +39,17 @@ const usefulLinks: Array<FooterUsefulLinks> = [
   },
   {
     title: "Contact Us",
-    links: [{ text: "Email" }, { text: "Phone Number" }],
+    links: [
+      { text: "Email", link: "/contact" },
+      { text: "Phone Number", link: "/contact" },
+    ],
   },
   {
     title: "Company",
     links: [
       { text: "About Us", link: "/about" },
       { text: "How it works", link: "/#how_it_works" },
+      { text: "FAQs", link: "/faqs" },
     ],
   },
   {
@@ -70,28 +73,28 @@ const usefulLinks: Array<FooterUsefulLinks> = [
 
 export default function Footer(): React.JSX.Element {
   return (
-    <footer className="bg-custom-black/90 text-white">
+    <footer className="bg-primary-6B text-white">
       <div className="px-7 py-20">
         <div className="flex gap-14 lg:gap-6 justify-between w-full max-w-7xl mx-auto flex-wrap">
           <div className="w-full min-w-[280px] max-w-xs">
-            <AppLogo />
+            {/* <AppLogo /> */}
             <h4 className="my-4 font-bold text-2xl">Follow Us</h4>
             <div className="flex items-center gap-2">
               {socials.map((social, index) => (
                 <Link
                   key={index}
                   href={social.link}
-                  className="text-white rounded-md border border-primary-60/20 p-3 hover:bg-primary-60 duration-300"
+                  className="text-white rounded-md border border-primary-60 p-3 bg-primary-60 hover:scale-105 duration-300"
                 >
                   {social.icon}
                 </Link>
               ))}
             </div>
             <div className="my-8">
-              <h1 className="font-medium text-2xl">Download Our App</h1>
+              <h1 className="font-semibold text-2xl">Download Our App</h1>
               <DownloadApps />
             </div>
-            <Newsletter />
+            {/* <Newsletter /> */}
           </div>
           <div className="w-full min-w-[280px] max-w-xs overflow-hidden">
             {
@@ -107,18 +110,18 @@ export default function Footer(): React.JSX.Element {
                         <Link
                           key={index}
                           href={data.link ?? "#"}
-                          className="flex items-center gap-1 text-sm text-secondary-gray-80 hover:text-primary-60 duration-300 group/useful"
+                          className="flex items-center gap-1 text-sm text-white/80 duration-300 group/useful"
                         >
                           <IoIosArrowForward
                             size={14}
-                            className="text-primary-60 hidden transform -translate-x-full transition-transform duration-700 group-hover/useful:inline group-hover/useful:translate-x-0"
+                            className="text-white hidden transform -translate-x-full transition-transform duration-700 group-hover/useful:inline group-hover/useful:translate-x-0"
                           />
                           <p>{data.text}</p>
                         </Link>
                       ) : (
                         <span
                           key={index}
-                          className="flex items-center gap-1 text-sm text-secondary-gray-80 hover:text-primary-60 duration-300"
+                          className="flex items-center gap-1 text-sm text-white/80 duration-300"
                         >
                           {data.text}
                         </span>
@@ -143,18 +146,18 @@ export default function Footer(): React.JSX.Element {
                         <Link
                           key={index}
                           href={data.link ?? "#"}
-                          className="flex items-center gap-1 text-sm text-secondary-gray-80 hover:text-primary-60 duration-300 group/useful"
+                          className="flex items-center gap-1 text-sm text-white/80 duration-300 group/useful"
                         >
                           <IoIosArrowForward
                             size={14}
-                            className="text-primary-60 hidden transform -translate-x-full transition-transform duration-700 group-hover/useful:inline group-hover/useful:translate-x-0"
+                            className="text-white hidden transform -translate-x-full transition-transform duration-700 group-hover/useful:inline group-hover/useful:translate-x-0"
                           />
                           <p>{data.text}</p>
                         </Link>
                       ) : (
                         <span
                           key={index}
-                          className="flex items-center gap-1 text-sm text-secondary-gray-80 hover:text-primary-60 duration-300"
+                          className="flex items-center gap-1 text-sm text-white/80 duration-300"
                         >
                           {data.text}
                         </span>
@@ -167,7 +170,7 @@ export default function Footer(): React.JSX.Element {
           </div>
         </div>
       </div>
-      <div className="py-3 px-6 font-medium text-sm text-secondary-gray-80">
+      <div className="py-3 px-6 font-medium text-sm text-white/80">
         <div className="flex gap-4 w-full max-w-7xl mx-auto">
           {subFooter.map((item, index) => (
             <Link
@@ -180,10 +183,9 @@ export default function Footer(): React.JSX.Element {
           ))}
         </div>
       </div>
-      <div className="py-4 px-6 border-t border-white/20 text-sm text-secondary-gray-80">
+      <div className="py-4 px-6 border-t border-white/20 text-sm text-white/80">
         <p className="w-full max-w-7xl mx-auto">
-          <span className="text-primary-60">&copy; 2024 Easiffy</span>, All
-          Rights Reserved.
+          <span>&copy; 2024 Easiffy</span>, All Rights Reserved.
         </p>
       </div>
     </footer>

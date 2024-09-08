@@ -29,6 +29,7 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        whiteF4: "#F4F4F4",
         custom: {
           black: "#010101",
           red: "#EA1919",
@@ -41,6 +42,7 @@ const config = {
           "00": "#008000",
           "60": "#27AE60",
           "4A": "#23A94A",
+          "6B": "#223168",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -89,10 +91,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "scrolling-slide": {
+          from: { transform: "translateX(0%)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "scrolling-slide": "scrolling-slide 40s linear infinite",
       },
     },
   },

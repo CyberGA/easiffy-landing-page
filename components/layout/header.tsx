@@ -17,8 +17,8 @@ import { TbMenuDeep } from "react-icons/tb";
 const navs: Array<{ text: string; href: string }> = [
   { text: "About", href: "/about" },
   { text: "Contact Us", href: "/contact" },
-  { text: "Terms and Conditions", href: "/terms%20and%20conditions" },
-  { text: "Privacy Policy", href: "/privacy%20policy" },
+  { text: "Become an affiliate", href: "/become%20affiliate" },
+  // { text: "Privacy Policy", href: "/privacy%20policy" },
 ];
 
 function Header(): React.JSX.Element {
@@ -48,11 +48,9 @@ function Header(): React.JSX.Element {
   return (
     <header
       className={cn(
-        "fixed z-20 top-0 left-0 right-0 h-20 transition-colors duration-300",
+        "sticky z-20 top-0 left-0 right-0 h-20 transition-colors duration-300",
         bg
-          ? "bg-white back shadow-sm border-b text-secondary-gray-40"
-          : pathname == "/"
-          ? "bg-transparent text-white"
+          ? "bg-whiteF4 back shadow-sm border-b text-secondary-gray-40"
           : "text-secondary-gray-40"
       )}
     >
@@ -60,22 +58,15 @@ function Header(): React.JSX.Element {
         <AppLogo />
 
         <div className="hidden min-[980px]:flex items-center gap-8">
-          <Link
-            href="/"
-            className={cn(
-              "hover:text-primary-4A hover:font-semibold duration-300",
-              pathname == "/" ? "text-primary-4A font-bold" : ""
-            )}
-          >
-            Home
-          </Link>
           {navs.map((nav, index) => (
             <Link
               key={index}
               href={nav.href}
               className={cn(
                 "hover:text-primary-4A hover:font-semibold duration-300",
-                pathname.startsWith(nav.href) ? "text-primary-4A font-bold" : ""
+                pathname.startsWith(nav.href)
+                  ? "text-primary-4A font-bold"
+                  : "text-primary-6B"
               )}
             >
               {nav.text}
@@ -83,28 +74,29 @@ function Header(): React.JSX.Element {
           ))}
         </div>
 
-        {!pathname.startsWith("/get%20started") ? (
+        <div className="flex items-center gap-3">
           <Link
-            href="/get started"
-            className="hidden min-[980px]:inline-block border-2 border-primary-4A text-primary-4A font-medium hover:bg-primary-4A hover:text-white py-2 px-4 rounded-lg duration-300"
+            href="/coming%20soon"
+            className="hidden min-[980px]:inline-block font-medium py-2 px-4 rounded-lg duration-300"
+          >
+            Log In
+          </Link>
+          <Link
+            href="/coming%20soon"
+            className="hidden min-[980px]:inline-block border-2 border-primary-6B text-white font-medium bg-primary-6B py-2 px-4 rounded-lg duration-300"
           >
             Get Started
           </Link>
-        ) : (
-          <span></span>
-        )}
+        </div>
         <div className="block min-[980px]:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className={cn(
-                "cursor-pointer",
-                bg || pathname !== "/" ? "text-custom-black" : "text-white"
-              )}
+              className={cn("cursor-pointer", "text-custom-black")}
               asChild
             >
               <TbMenuDeep size={24} />
             </SheetTrigger>
-            <SheetContent side="left">
+            <SheetContent side="top" className="bottom-0">
               <SheetHeader>
                 <SheetTitle>
                   <AppLogo />
@@ -112,16 +104,6 @@ function Header(): React.JSX.Element {
               </SheetHeader>
               <div className="mt-20 pb-10">
                 <div className="flex flex-col items-center gap-8">
-                  <Link
-                    href="/"
-                    onClick={() => setOpen((open) => false)}
-                    className={cn(
-                      "w-full text-center hover:text-primary-4A hover:font-semibold duration-300",
-                      pathname == "/" ? "text-primary-4A font-bold" : ""
-                    )}
-                  >
-                    Home
-                  </Link>
                   {navs.map((nav, index) => (
                     <Link
                       key={index}
@@ -131,7 +113,7 @@ function Header(): React.JSX.Element {
                         "w-full text-center hover:text-primary-4A hover:font-semibold duration-300",
                         pathname.startsWith(nav.href)
                           ? "text-primary-4A font-bold"
-                          : ""
+                          : "text-primary-6B"
                       )}
                     >
                       {nav.text}
@@ -139,11 +121,17 @@ function Header(): React.JSX.Element {
                   ))}
                 </div>
               </div>
-              <div className="absolute z-0 right-5 bottom-10 w-[calc(100%-32px)]">
+              <div className="absolute z-0 right-5 bottom-10 w-[calc(100%-32px)] space-y-2">
                 <Link
-                  href="/get started"
+                  href="/coming%20soon"
+                  className="w-full block text-center font-medium py-2 px-4"
+                >
+                  Log In
+                </Link>
+                <Link
+                  href="/coming%20soon"
                   onClick={() => setOpen((open) => false)}
-                  className="w-full block text-center border-2 border-primary-4A text-primary-4A font-medium hover:bg-primary-4A hover:text-white py-2 px-4 rounded-lg duration-300"
+                  className="w-full block text-center border-2 border-primary-6B bg-primary-6B text-white font-medium py-2 px-4 rounded-lg duration-300"
                 >
                   Get Started
                 </Link>

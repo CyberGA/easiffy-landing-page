@@ -2,8 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 
 const downloads: Array<{ text: string, img: string, link: string }> = [
-  { text: "Download on playstore", img: "/play-store.png", link: "#"},
-  { text: "Download on app store", img: "/app-store.png", link: "#"},
+  { text: "Download on playstore", img: "/google-play.svg", link: "/coming soon"},
+  { text: "Download on app store", img: "/app-store.svg", link: "/coming soon"},
 ]
 
 export default function DownloadApps(): React.JSX.Element {
@@ -13,16 +13,15 @@ export default function DownloadApps(): React.JSX.Element {
                   <Link
                     key={index}
                     href={download.link}
-                    className="relative z-0 rounded-md w-fit h-fit overflow-hidden"
+                    className="rounded-md w-fit h-fit overflow-hidden"
                   >
-                    <span className="bg-white absolute z-0 inset-y-0.5 inset-x-0.5"></span>
                     <Image
                       src={download.img}
                       blurDataURL={download.img}
                       alt={download.text}
                       width={200}
                       height={180}
-                      className="relative z-[1] object-cover hover:scale-105 duration-300"
+                      className="relative z-[1] object-cover h-auto hover:scale-105 duration-300"
                     />
                   </Link>
                 ))}

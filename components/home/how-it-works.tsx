@@ -37,7 +37,7 @@ const list: Array<ListItemProps> = [
 const ListItem: React.FC<ListItemProps> = ({ title, index, text }) => {
   return (
     <div className="w-full flex items-start space-x-4">
-      <div className="size-10 flex items-center justify-center p-4 bg-secondary-gray-40 text-white text-base rounded-full">
+      <div className="size-10 flex items-center justify-center p-4 bg-primary-60 text-white text-base rounded-full">
         {index}
       </div>
       <div className="w-fit space-y-2 text-primary-60 text-left">
@@ -51,14 +51,14 @@ const ListItem: React.FC<ListItemProps> = ({ title, index, text }) => {
 export default function HowItWorks() {
   return (
     <section
-      className="text-custom-black px-6 pt-10 bg-[#f9f7f3]"
+      className="text-custom-black px-6 py-10 bg-[#f9f7f3]"
       id="how_it_works"
     >
       <div className="h-10"></div>
-      <div className="w-full max-w-5xl mx-auto">
-        <div className="text-primary-60 w-full max-w-4xl font-semibold my-10 space-y-3">
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="text-primary-60 font-semibold my-10 space-y-3">
           <p className="text-sm">How it works</p>
-          <h1 className="text-3xl md:text-4xl text-secondary-gray-40">
+          <h1 className="text-3xl md:text-4xl text-primary-6B">
             Simple steps to efficiency and endless possibilities. Easiffy is an
             ever-ready employee in your pocket.{" "}
           </h1>
@@ -67,19 +67,17 @@ export default function HowItWorks() {
           {list.map((item) => (
             <div
               key={item.index}
-              className="w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-10 border-b sm:space-y-10"
+              className="w-full max-w-3xl flex flex-row items-center justify-between gap-3 sm:gap-10 sm:space-y-10"
             >
               <ListItem {...item} />
               {item.img && (
-                <div className="w-full flex lg:justify-end">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width={400}
-                    height={80}
-                    className="w-full max-w-[450px] h-auto rounded-t-lg bg-white"
-                  />
-                </div>
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={100}
+                  height={80}
+                  className="w-full max-w-[100px] h-auto rounded-t-lg bg-white"
+                />
               )}
             </div>
           ))}

@@ -65,9 +65,9 @@ export default function ClientFeedback(): React.JSX.Element {
 
   if (!feedbacks) return <></>
   return (
-    <section className="py-20 px-6 text-custom-black">
+    <section className="py-20 px-6 text-custom-black bg-white">
       <div className="w-full max-w-7xl mx-auto">
-        <h1 className="text-3xl md:text-5xl text-center text-primary-60 mb-16">
+        <h1 className="text-3xl md:text-5xl text-center text-primary-6B mb-16">
           Proven Track of Satisfied Clients
         </h1>
       </div>
@@ -97,7 +97,7 @@ export default function ClientFeedback(): React.JSX.Element {
           {feedbacks.map((feedback, index) => (
             <SwiperSlide key={index}>
               <div className="p-4 bg-white rounded-lg border w-full max-w-full xs:max-w-xs mb-16">
-                <h2 className="text-xl font-bold mb-2 font-platypi">
+                <h2 className="text-xl font-bold mb-2 font-platypi text-primary-60">
                   {feedback.title}
                 </h2>
                 <p className="text-sm mb-4">{feedback.desc}</p>

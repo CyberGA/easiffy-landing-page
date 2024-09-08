@@ -62,7 +62,7 @@ const ServiceCard: React.FC<IService> = (service) => {
         {service.desc}
       </p>
       <div className="flex gap-1 items-center mt-10 group-hover/img:text-primary-60 duration-300">
-        <p className="text-base font-semibold">GET STARTED</p>
+        <p className="text-base font-semibold text-primary-6B">GET STARTED</p>
         <span className="flex items-center overflow-hidden">
           <IoIosArrowForward className="translate-x-0 group-hover/icon:translate-x-[200%] duration-300" />
           <FaArrowRightLong className="-translate-x-[200%] group-hover/img:-translate-x-[50%] duration-300" />
@@ -108,7 +108,7 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <section className="text-custom-black px-5 pt-10 pb-32" id="services">
+    <section className="text-custom-black px-5 pt-10 pb-32 bg-white" id="services">
       <div className="h-10"></div>
       <div className="flex flex-col items-center w-full max-w-7xl mx-auto text-center relative">
         <div className="flex items-center text-sm text-primary-60 font-semibold mt-10">
@@ -118,7 +118,7 @@ const Services: React.FC = () => {
           </div>
           <p>SERVICES WE PROVIDE</p>
         </div>
-        <h1 className="text-3xl md:text-5xl my-3">
+        <h1 className="text-3xl md:text-5xl my-3 text-primary-6B">
           Innovative Solutions for Talents
         </h1>
         <p className="text-base text-secondary-gray-7F w-full max-w-md mx-auto">
