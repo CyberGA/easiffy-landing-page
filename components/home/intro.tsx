@@ -4,8 +4,9 @@ import Image from "next/image";
 
 function Intro(): React.JSX.Element {
   return (
-    <section className="relative min-h-[calc(100vh-100px)] bg-[url('/home-intro-bg.jpg')] bg-no-repeat bg-right-bottom bg-cover pt-10">
-      <div className="relative w-full max-w-4xl bg-whiteF4/40">
+    <section className="relative z-0 min-h-[calc(100vh-100px)] bg-[url('/home-intro-bg.jpg')] bg-no-repeat bg-right-bottom bg-cover pt-10">
+      <div className="absolute z-0 inset-0 bg-whiteF4/40"></div>
+      <div className="relative z-[1] w-full max-w-4xl">
         <div className="flex flex-col items-center justify-center h-[calc(100vh-100px)] text-primary-6B w-full max-w-2xl mx-auto px-6">
           <h1 className="text-3xl md:text-6xl w-full leading-[1.2]">
             Achieve more with <span className="text-primary-60">EASIFFY</span>
