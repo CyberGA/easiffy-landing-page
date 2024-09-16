@@ -77,7 +77,7 @@ function Header(): React.JSX.Element {
         <div className="flex items-center gap-3">
           <Link
             href="/coming%20soon"
-            className="hidden min-[980px]:inline-block font-medium py-2 px-4 rounded-lg duration-300"
+            className="hidden min-[980px]:inline-block font-medium text-primary-6B py-2 px-4 rounded-lg duration-300"
           >
             Log In
           </Link>
@@ -124,7 +124,7 @@ function Header(): React.JSX.Element {
               <div className="absolute z-0 right-5 bottom-10 w-[calc(100%-32px)] space-y-2">
                 <Link
                   href="/coming%20soon"
-                  className="w-full block text-center font-medium py-2 px-4"
+                  className="w-full block text-center text-primary-6B font-medium py-2 px-4"
                 >
                   Log In
                 </Link>

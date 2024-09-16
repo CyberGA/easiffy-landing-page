@@ -33,36 +33,38 @@ const teamMembers: Array<ITeamMember> = [
 
 function TeamMembers() {
   const [loading, setLoading] = useState<boolean>(false);
-  const [members, setMembers] = useState<Array<ITeamMember>>(teamMembers);
+  const [members, setMembers] = useState<Array<ITeamMember>>([]);
   const router = useRouter();
 
-  // async function getTeams() {
-  //   setLoading(true);
-  //   try {
-  //     const res = await axios.get("/teams");
-  //     setMembers(res.data);
-  //   } catch (error) {
-  //     toast.error("Could not get team members");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // }
+  async function getTeams() {
+    setLoading(true);
+    try {
+      const res = await axios.get("/teams");
+      setMembers(res.data);
+    } catch (error) {
+      toast.error("Could not get team members");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   const handleTeamClick = (member: ITeamMember) => {
     sessionStorage.setItem("team", JSON.stringify(member));
     router.push(`/about/team/${member.id}`);
   };
 
-  // useEffect(() => {
-  //   getTeams();
-  // }, []);
+  useEffect(() => {
+    getTeams();
+  }, []);
 
   return (
     <section className="pb-20 px-6 text-custom-dark">
       <div className="w-full max-w-7xl mx-auto">
-        <p className="my-5 text-3xl sm:text-4xl font-semibold text-primary-60">
-          OUR TEAM
-        </p>
+        {!loading && members.length !== 0 && (
+          <p className="my-5 text-3xl sm:text-4xl font-semibold text-primary-60">
+            OUR TEAM
+          </p>
+        )}
         {loading ? (
           <p className="mt-20">Loading Teams...</p>
         ) : (

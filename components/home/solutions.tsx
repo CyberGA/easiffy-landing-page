@@ -88,7 +88,7 @@ export default function Pricing() {
                     ))}
                   </div>
                   <Popover>
-                    <PopoverTrigger className="flex items-center gap-1 text-base font-semibold text-secondary-gray-40 group-hover/solution:text-white hover:text-primary-60 duration-300">
+                    <PopoverTrigger className="flex items-center gap-1 text-base font-semibold text-primary-6B group-hover/solution:text-white hover:text-primary-60 duration-300">
                       <span>SEE MORE</span>
                       <MdOutlineKeyboardArrowRight />
                     </PopoverTrigger>

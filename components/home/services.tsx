@@ -41,6 +41,30 @@ const serviceList: Array<IService> = [
     link: "#",
     img: "/writing-service.jpeg",
   },
+  {
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart..",
+    link: "#",
+    img: "/writing-service.jpeg",
+  },
+  {
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart..",
+    link: "#",
+    img: "/writing-service.jpeg",
+  },
+  {
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart..",
+    link: "#",
+    img: "/writing-service.jpeg",
+  },
+  {
+    title: "Writing Services",
+    desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
+    link: "#",
+    img: "/writing-service.jpeg",
+  },
 ];
 
 const ServiceCard: React.FC<IService> = (service) => {
@@ -61,13 +85,13 @@ const ServiceCard: React.FC<IService> = (service) => {
       <p className="text-base text-secondary-gray-40 line-clamp-3">
         {service.desc}
       </p>
-      <div className="flex gap-1 items-center mt-10 group-hover/img:text-primary-60 duration-300">
+      {/* <div className="flex gap-1 items-center mt-10 group-hover/img:text-primary-60 duration-300">
         <p className="text-base font-semibold text-primary-6B">GET STARTED</p>
         <span className="flex items-center overflow-hidden">
           <IoIosArrowForward className="translate-x-0 group-hover/icon:translate-x-[200%] duration-300" />
           <FaArrowRightLong className="-translate-x-[200%] group-hover/img:-translate-x-[50%] duration-300" />
         </span>
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -108,9 +132,12 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <section className="text-custom-black px-5 pt-10 pb-32 bg-white" id="services">
+    <section
+      className="text-custom-black px-5 pt-10 pb-32 bg-white"
+      id="services"
+    >
       <div className="h-10"></div>
-      <div className="flex flex-col items-center w-full max-w-7xl mx-auto text-center relative">
+      <div className="flex flex-col items-center w-full max-w-screen-xl mx-auto text-center relative">
         <div className="flex items-center text-sm text-primary-60 font-semibold mt-10">
           <div className="flex items-center w-fit">
             <BiSolidRightArrow size={12} />
@@ -125,9 +152,9 @@ const Services: React.FC = () => {
           Long established fact that a reader will be distracted by the readable
           content of a page.
         </p>
-        <div className="relative w-full max-w-7xl">
+        <div className="flex justify-center relative w-full max-w-screen-xl">
           <div
-            className="relative flex w-full max-w-6xl gap-5 mt-10 mx-auto overflow-x-auto services__carousel"
+            className="relative flex w-fit max-w-screen-xl gap-5 mt-10 mx-auto overflow-x-auto services__carousel"
             ref={containerRef}
             onScroll={handleScroll}
           >

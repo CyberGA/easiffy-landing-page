@@ -3,10 +3,7 @@ import Link from "next/link";
 
 export default function EasiffyWeb(): React.JSX.Element {
   return (
-    <section
-      className="py-20 px-6 text-custom-black"
-      id="use-web"
-    >
+    <section className="py-20 px-6 text-primary-6B">
       <h1 className="text-5xl sm:text-6xl text-center mb-16 text-primary-6B">
         Easiffy Web
       </h1>
