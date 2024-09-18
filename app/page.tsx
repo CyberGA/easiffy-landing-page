@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Intro from "@/components/home/intro"
-import Services from "@/components/home/services"
+import Categories from "@/components/categories/categories";
 import Effortless from "@/components/home/effortless";
 import ClientFeedback from "@/components/home/feedbacks";
 import Affiliate from "@/components/home/affiliate";
@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <Intro />
       <EmpoweringBusiness />
-      <Services />
+      <Categories />
       <HowItWorks />
       <Banner />
       {/* <Affiliate /> */}

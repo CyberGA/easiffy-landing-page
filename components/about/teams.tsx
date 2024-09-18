@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import LoadingSpinner from "../ui/spinner";
 
 const teamMembers: Array<ITeamMember> = [
   {
@@ -66,7 +67,9 @@ function TeamMembers() {
           </p>
         )}
         {loading ? (
-          <p className="mt-20">Loading Teams...</p>
+          <div className="w-full flex items-center justify-center gap-2">
+            <LoadingSpinner className="size-7" /> <p>Loading Teams...</p>
+          </div>
         ) : (
           <div className="flex flex-wrap gap-5 mt-10 duration-300">
             {members &&

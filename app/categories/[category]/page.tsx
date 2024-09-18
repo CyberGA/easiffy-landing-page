@@ -1,7 +1,9 @@
+import SubCategories from "@/components/categories/sub-categories";
 
-
-export default function Page(): React.ReactNode {
-    return <div className="">
-        Category
-    </div>
+export default function Page({
+  params: { category },
+}: {
+  params: { category: string };
+}): React.ReactNode {
+  return <SubCategories id={category} />;
 }
