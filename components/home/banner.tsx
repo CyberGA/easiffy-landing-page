@@ -10,12 +10,12 @@ export default function Banner() {
           </h1>
         </div>
       </div>
-      <div className="px-6 mt-10">
+      {/* <div className="px-6 mt-10">
         <p className="text-lg sm:text-2xl text-primary-6B w-full max-w-xl mx-auto text-center font-bold">
           We asked our customers how likely they were to recomment Easiffy to
           their network.
         </p>
-      </div>
+      </div> */}
     </section>
   );
 }
