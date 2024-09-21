@@ -76,7 +76,7 @@ export default function Pricing() {
                   <div className="text-lg sm:text-2xl font-semibold text-primary-60">
                     {price.title}
                   </div>
-                  <div className="my-8">
+                  <div className="my-8 mb-16">
                     {price.features.map((feature) => (
                       <div
                         key={feature}

@@ -51,7 +51,7 @@ const ListItem: React.FC<ListItemProps> = ({ title, index, text }) => {
 export default function HowItWorks() {
   return (
     <section
-      className="text-custom-black px-6 py-10 bg-[#f9f7f3]"
+      className="text-custom-black px-6 py-10 pb-28 bg-[#f9f7f3]"
       id="how_it_works"
     >
       <div className="h-10"></div>

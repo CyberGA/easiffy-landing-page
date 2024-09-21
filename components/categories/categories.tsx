@@ -162,12 +162,11 @@ const Categories: React.FC = () => {
           <p>SERVICES WE PROVIDE</p>
         </div>
         <h1 className="text-3xl md:text-5xl my-3 text-primary-6B">
-          Innovative Solutions for Talents
+          Check out a few of our services and what we offer
         </h1>
-        <p className="text-base text-secondary-gray-7F w-full max-w-md mx-auto">
-          Long established fact that a reader will be distracted by the readable
-          content of a page.
-        </p>
+        {/* <p className="text-base text-secondary-gray-7F w-full max-w-md mx-auto">
+          Check out a few of our services and what we offer
+        </p> */}
         {loading ? (
           <div className="w-full flex items-center justify-center gap-2 mt-3">
             <LoadingSpinner />
