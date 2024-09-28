@@ -48,7 +48,7 @@ function Header(): React.JSX.Element {
   return (
     <header
       className={cn(
-        "sticky z-20 top-0 left-0 right-0 h-20 transition-colors duration-300",
+        "fixed z-20 top-0 left-0 right-0 h-20 transition-colors duration-300",
         bg
           ? "bg-whiteF4 back shadow-sm border-b text-secondary-gray-40"
           : "text-secondary-gray-40"
@@ -76,13 +76,13 @@ function Header(): React.JSX.Element {
 
         <div className="flex items-center gap-3">
           <Link
-            href="/coming%20soon"
+            href="/login"
             className="hidden min-[980px]:inline-block font-medium text-primary-6B py-2 px-4 rounded-lg duration-300"
           >
             Log In
           </Link>
           <Link
-            href="/coming%20soon"
+            href="/register"
             className="hidden min-[980px]:inline-block border-2 border-primary-6B text-white font-medium bg-primary-6B py-2 px-4 rounded-lg duration-300"
           >
             Get Started

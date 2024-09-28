@@ -4,7 +4,7 @@ import Link from "next/link"
 const AppLogo = () => (
   <Link href="/">
     <Image
-      src="/brand-logo.png"
+      src="/logo.png"
       alt="Brand logo"
       width={110.77}
       height={32}
