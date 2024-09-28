@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Nohemi";
+	src: url("/fonts/nohemi-black.otf") format("opentype");
+	font-weight: 900;
+	font-style: normal;
+}
+
 @layer base {
 	:root {
 		--background: 0 0% 100%;

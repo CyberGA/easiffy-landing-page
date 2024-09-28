@@ -52,9 +52,14 @@ export default function BioForm() {
 				user: {
 					...data.user,
 					bio: values.bio,
-					onboarding: res.data.onboarding
+					onboarding: {
+						...data.user.onboarding,
+						stage1: true
+					}
 				},
 			});
+
+			toast.success("Bio successfully updated!")
 
 			router.push("/onboarding/avatar");
 		} catch (err: AxiosError | any) {

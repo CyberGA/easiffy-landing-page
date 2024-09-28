@@ -48,7 +48,7 @@ function Header(): React.JSX.Element {
   return (
     <header
       className={cn(
-        "sticky z-20 top-0 left-0 right-0 h-20 transition-colors duration-300",
+        "fixed z-20 top-0 left-0 right-0 h-20 transition-colors duration-300",
         bg
           ? "bg-whiteF4 back shadow-sm border-b text-secondary-gray-40"
           : "text-secondary-gray-40"

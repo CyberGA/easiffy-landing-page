@@ -129,7 +129,10 @@ export default function AvatarForm() {
 				user: {
 					...data.user,
 					avatar: res.data?.avatar,
-					onboarding: res.data?.onboarding
+					onboarding: {
+						...data.user.onboarding,
+						stage2: true,
+					},
 				},
 			});
 

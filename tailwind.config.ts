@@ -23,6 +23,7 @@ const config = {
 				platypi: ["var(--font-platypi)"],
 				raleway: ["var(--font-raleway)"],
 				inter: ["Inter", "sans-serif"],
+				nohemi: ["Nohemi"],
 			},
 			colors: {
 				border: "hsl(var(--border))",
