@@ -7,7 +7,7 @@ export default auth((req) => {
 	}
 
 	const onboarding = req.auth?.user.onboarding;
-
+	
 	if (req.auth && (!onboarding?.stage1 || !onboarding.stage2)) {
 		return hasCompletedOnboarding(req, onboarding);
 	}

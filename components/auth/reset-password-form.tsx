@@ -1,6 +1,5 @@
 "use client";
 
-import {useAuthStore} from "@/store/auth-store";
 import {Button} from "@/components/ui/button";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -14,20 +13,14 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
-import {Checkbox} from "@/components/ui/checkbox";
-import Link from "next/link";
-import {
-	register,
-	resetPassword,
-	verifyPasswordResetToken,
-} from "@/requests/auth";
+import {resetPassword, verifyPasswordResetToken} from "@/requests/auth";
 import {toast} from "sonner";
 import Loader from "@/components/loader";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {useRouter, useSearchParams} from "next/navigation";
 import {InputOTP, InputOTPGroup, InputOTPSlot} from "@/components/ui/input-otp";
-import {cn} from "@/lib/utils";
 import {AxiosError} from "axios";
+import {cn} from "@/lib/utils";
 
 const formSchema = z
 	.object({
