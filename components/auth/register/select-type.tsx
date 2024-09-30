@@ -45,11 +45,7 @@ export default function SelectType() {
 				<div className="space-y-1">
 					<h2 className="font-medium text-xl">Sign up as a user</h2>
 					<p className="text-sm">
-						Save time and spend less by integrating easiffy into
-						your daily business activities. Easiffy is a employee.
-						Enhance professionalism and ensure accuracy with
-						Easiffy. Always busy? Easiffy is another
-						employee in your pocket
+						Save time and spend less by integrating Easiffy to your business. Easiffy is a remote extension of your business.
 					</p>
 				</div>
 				<div
