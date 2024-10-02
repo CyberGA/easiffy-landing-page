@@ -63,8 +63,7 @@ export default function Industries() {
           Our Specialized Industries
         </h1>
         <p className="text-base text-whiteF4 w-full">
-          Effortlessly tap into skilled remote talent with our simplified
-          hiring.
+         Who Requires Our Service?
         </p>
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-0 justify-between mt-10">
           <div className="w-full max-w-[700px]  border-r border-secondary-gray-7F/50">

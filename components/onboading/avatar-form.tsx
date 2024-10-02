@@ -175,7 +175,7 @@ export default function AvatarForm() {
 							</div>
 							<div className="leading-none text-center">
 								{session?.user && (
-									<>
+									<div>
 										<h2 className="font-semibold capitalize text-xl">
 											{session?.user.firstName +
 												" " +
@@ -184,7 +184,7 @@ export default function AvatarForm() {
 										<p className="text-sm">
 											@{session?.user.username}
 										</p>
-									</>
+									</div>
 								)}
 							</div>
 						</div>
