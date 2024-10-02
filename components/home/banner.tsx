@@ -11,10 +11,10 @@ export default async function Banner() {
         <div className="overflow-hidden relative">
           <div className="flex animate-scrolling-slide">
             <h1 className="text-5xl sm:text-7xl text-secondary-gray-80/50 whitespace-nowrap py-16 font-semibold">
-              {res.data?.content}.
+              {res.data?.content}
             </h1>
             <h1 className="text-5xl sm:text-7xl text-secondary-gray-80/50 whitespace-nowrap py-16 font-semibold">
-              {res.data?.content}.h
+              {res.data?.content}
             </h1>
           </div>
         </div>

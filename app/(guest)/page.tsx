@@ -1,14 +1,15 @@
 import {Metadata} from "next";
-import Intro from "@/components/home/intro";
 import Categories from "@/components/categories/categories";
 import Effortless from "@/components/home/effortless";
 import ClientFeedback from "@/components/home/feedbacks";
-import Affiliate from "@/components/home/affiliate";
 import HowItWorks from "@/components/home/how-it-works";
 import Pricing from "@/components/home/solutions";
 import Banner from "@/components/home/banner";
 import EasiffyWeb from "@/components/home/web";
 import EmpoweringBusiness from "@/components/home/empowering_business";
+import Hero from "@/components/home/hero";
+import React from "react";
+import WorkWithUs from "@/components/home/work-with-us";
 
 export const metadata: Metadata = {
 	title: "Home | Easiffy",
@@ -17,17 +18,17 @@ export const metadata: Metadata = {
 
 export default function Home() {
 	return (
-		<>
-			<Intro />
-			<EmpoweringBusiness />
-			<Categories />
-			<HowItWorks />
-			<Banner />
-			{/* <Affiliate /> */}
-			<Effortless />
-			<ClientFeedback />
-			<Pricing />
-			<EasiffyWeb />
-		</>
-	);
+    <>
+      <Hero />
+      <EmpoweringBusiness />
+      <Categories />
+      <WorkWithUs />
+      <HowItWorks />
+      <Banner />
+      <Effortless />
+      <ClientFeedback />
+      <Pricing />
+      <EasiffyWeb />
+    </>
+  );
 }

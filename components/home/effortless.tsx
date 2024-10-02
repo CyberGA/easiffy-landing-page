@@ -4,10 +4,10 @@ import DownloadApps from '@/components/layout/download-app';
 export default function Effortless(): React.JSX.Element {
   return (
     <section
-      className="pt-20 px-6 text-custom-black border-b bg-primary-D9/20"
+      className="pt-20 px-6 text-custom-black border-b bg-primary-6B"
       id="use-web"
     >
-      <h1 className="text-3xl md:text-5xl text-center mb-16 text-primary-6B">
+      <h1 className="text-3xl md:text-5xl text-center mb-16 text-white">
         Making It Effortless For You
       </h1>
       <div className="flex items-center justify-between gap-14 sm:gap-5 flex-col-reverse md:flex-row w-full max-w-5xl mx-auto px-10 rounded-lg">
@@ -19,10 +19,10 @@ export default function Effortless(): React.JSX.Element {
           className="h-auto"
         />
         <div className="w-full max-w-md pb-4">
-          <h4 className="text-3xl md:text-4xl text-primary-60">
+          <h4 className="text-3xl md:text-4xl text-white">
             Do on the go
           </h4>
-          <p className="text-base mt-2 font-light text-primary-6B">
+          <p className="text-base mt-2 font-light text-white">
             Enjoy our full range of services wherever you are. Enhance your
             business with seamless, on-the-go support. Our mobile app delivers
             comprehensive digital solutions right to your fingertips, anytime,

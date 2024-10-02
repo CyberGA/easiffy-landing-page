@@ -21,7 +21,7 @@ export default function EmpoweringBusiness(): React.ReactNode {
                 Empowering businesses
               </h1>
             </div>
-            <div className="flex flex-wrap gap-10">
+            <div className="flex gap-10">
               <div className="w-full max-w-[360px] h-[450px] rounded-md overflow-hidden">
                 <Image
                   src="/cool-guy.jpg"
@@ -48,7 +48,7 @@ export default function EmpoweringBusiness(): React.ReactNode {
               </div>
             </div>
             <div className="block xl:hidden space-y-4 max-w-[760px]">
-              <h1 className="text-lg md:text-4xl text-primary-6B font-bold">
+              <h1 className="text-2xl md:text-4xl text-primary-6B font-bold">
                 Discover flexible options that matches your day-to-day needs
               </h1>
               <p className="text-base text-secondary-gray-7F mx-auto">
