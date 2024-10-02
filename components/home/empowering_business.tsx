@@ -17,11 +17,11 @@ export default function EmpoweringBusiness(): React.ReactNode {
                 </div>
                 <h6>WELCOME TO EASIFFY</h6>
               </div>
-              <h1 className="text-2xl md:text-4xl mt-3 mb-[46px] text-primary-6B font-bold">
+              <h1 className="text-2xl md:text-4xl mt-3 md:mb-[46px] text-primary-6B font-bold">
                 Empowering businesses
               </h1>
             </div>
-            <div className="flex gap-10">
+            <div className="flex flex-col md:flex-row gap-10">
               <div className="w-full max-w-[360px] h-[450px] rounded-md overflow-hidden">
                 <Image
                   src="/cool-guy.jpg"

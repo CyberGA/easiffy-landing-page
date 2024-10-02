@@ -8,8 +8,8 @@ export default function EasiffyWeb(): React.JSX.Element {
         Easiffy Web
       </h1>
       <div className="flex items-center justify-between gap-5 flex-col md:flex-row w-full max-w-7xl mx-auto p-10 rounded-lg">
-        <div className="w-full max-w-md mb-7 md:mb-0">
-          <h4 className="text-4xl text-primary-60">
+        <div className="w-full max-w-md mb-3 md:mb-0">
+          <h4 className="text-xl sm:text-4xl text-primary-60">
             Explore with ease. Our dashboard designed with you in mind.
           </h4>
           <p className="text-base mt-2">

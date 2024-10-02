@@ -10,6 +10,7 @@ import EmpoweringBusiness from "@/components/home/empowering_business";
 import Hero from "@/components/home/hero";
 import React from "react";
 import WorkWithUs from "@/components/home/work-with-us";
+import Industries from "@/components/home/industries";
 
 export const metadata: Metadata = {
 	title: "Home | Easiffy",
@@ -20,6 +21,7 @@ export default function Home() {
 	return (
     <>
       <Hero />
+      <Industries />
       <EmpoweringBusiness />
       <Categories />
       <WorkWithUs />
