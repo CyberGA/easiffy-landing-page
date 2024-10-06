@@ -129,9 +129,6 @@ const Categories: React.FC = () => {
               {categories.map((category) => (
                 <CategoryCard {...category} key={category.id} />
               ))}
-              {categories.map((category) => (
-                <CategoryCard {...category} key={category.id} />
-              ))}
             </div>
             {showLeftArrow && (
               <div
