@@ -16,32 +16,34 @@ import Link from "next/link";
 
 const SubCategoryCard: React.FC<ICategoryContent> = (category) => {
   return (
-      <div className="w-[320px] min-w-[320px] bg-white py-3 px-5 border border-black/10 rounded-md text-custom-black text-left  hover:shadow-lg hover:border-black/20 duration-300 cursor-pointer group">
-        <div className="w-full h-fit overflow-hidden rounded-sm mb-6">
-          <Image
-            src={category.attachment.path}
-            alt={category.attachment.name}
-            width={160}
-            height={325}
-            objectFit="cover"
-            className="w-full max-h-[400px] rounded-sm"
-          />
-        </div>
+    <div className="w-[320px] min-w-[320px] min-h-[545px] h-fit bg-white py-3 px-5 border border-black/10 rounded-md text-custom-black text-left  hover:shadow-lg hover:border-black/20 duration-300 cursor-pointer group">
+      <div className="w-full h-[325px] overflow-hidden rounded-sm mb-6">
+        <Image
+          src={category.attachment.path}
+          alt={category.attachment.name}
+          width={180}
+          height={325}
+          objectFit="cover"
+          className="w-full h-[325px] rounded-sm border object-cover border-black/5"
+        />
+      </div>
+      <div className="line-clamp-3 group-hover:line-clamp-none space-y-2">
         <h2 className="text-xl font-semibold text-primary-60">
           {category.name}
         </h2>
-        <p className="text-base text-secondary-gray-40 line-clamp-3 group-hover:line-clamp-none duration-500">
+        <p className="text-base text-secondary-gray-40 duration-500">
           {category.description}
         </p>
-        <div className="mt-10">
-          <Link href="/contact">
-            <p className="w-full flex items-center justify-center gap-2.5 text-base font-medium bg-whiteF4 text-primary-6B py-3 px-6 rounded-lg">
-              <MdOutlineMailOutline size={24} />
-              Send us a message
-            </p>
-          </Link>
-        </div>
       </div>
+      <div className="mt-10">
+        <Link href="/contact">
+          <p className="w-full flex items-center justify-center gap-2.5 text-base font-medium bg-whiteF4 text-primary-6B py-3 px-6 rounded-lg">
+            <MdOutlineMailOutline size={24} />
+            Send us a message
+          </p>
+        </Link>
+      </div>
+    </div>
   );
 };
 
@@ -105,7 +107,7 @@ export default function SubCategories({ id }: { id: string }): React.ReactNode {
 
   return (
     <section
-      className="text-custom-black px-5 pt-10 pb-32 bg-white"
+      className="text-custom-black px-5 mt-16 pb-32 bg-white"
     >
       <div className="h-10"></div>
       {loading ? (

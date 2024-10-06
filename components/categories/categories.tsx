@@ -1,9 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { IoIosArrowForward } from "react-icons/io";
-
-import { FaArrowRightLong } from "react-icons/fa6";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 import Image from "next/image";
@@ -14,77 +11,28 @@ import { toast } from "sonner";
 import LoadingSpinner from "../ui/spinner";
 import Link from "next/link";
 
-// const categoryList: Array<IService> = [
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-//   {
-//     title: "Writing Services",
-//     desc: "Are you looking for a writer that is very proficient in writing and creating stories that catches the heart.",
-//     link: "#",
-//     img: "/writing-service.jpeg",
-//   },
-// ];
-
 const CategoryCard: React.FC<ICategoryContent> = (category) => {
   return (
     <Link href={`/categories/${category.id}`}>
-      <div className="w-[320px] min-w-[320px] bg-white py-3 pb-10 px-5 border border-black/10 rounded-md text-custom-black text-left  hover:shadow-lg hover:border-black/20 duration-300 cursor-pointer group">
-        <div className="w-full h-fit overflow-hidden rounded-sm mb-6">
+      <div className="w-[320px] min-w-[320px] min-h-[490px] h-fit bg-white py-3 pb-10 px-5 border border-black/10 rounded-md text-custom-black text-left  hover:shadow-lg hover:border-black/20 duration-300 cursor-pointer group">
+        <div className="w-full h-[325px] overflow-hidden rounded-sm mb-6">
           <Image
             src={category.attachment.path}
             alt={category.attachment.name}
-            width={160}
+            width={180}
             height={325}
             objectFit="cover"
-            className="w-full max-h-[400px] rounded-sm"
+            className="w-full h-[325px] rounded-sm object-cover border border-black/5"
           />
         </div>
-        <h2 className="text-xl font-semibold text-primary-60">
-          {category.name}
-        </h2>
-        <p className="text-base text-secondary-gray-40 line-clamp-3 group-hover:line-clamp-none duration-500">
-          {category.description}
-        </p>
+       <div className="line-clamp-3 group-hover:line-clamp-none space-y-2">
+         <h2 className="text-xl font-semibold text-primary-60">
+           {category.name}
+         </h2>
+         <p className="text-base text-secondary-gray-40 duration-500">
+           {category.description}
+         </p>
+       </div>
       </div>
     </Link>
   );
@@ -178,6 +126,9 @@ const Categories: React.FC = () => {
               ref={containerRef}
               onScroll={handleScroll}
             >
+              {categories.map((category) => (
+                <CategoryCard {...category} key={category.id} />
+              ))}
               {categories.map((category) => (
                 <CategoryCard {...category} key={category.id} />
               ))}

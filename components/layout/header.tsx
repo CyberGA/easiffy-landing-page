@@ -31,7 +31,7 @@ function Header(): React.JSX.Element {
       setBg((bg) => true);
     }
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 80) {
         setBg((bg) => true);
       } else {
         setBg((bg) => false);
