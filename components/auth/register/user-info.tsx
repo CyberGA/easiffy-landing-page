@@ -132,11 +132,6 @@ export default function UserInfo() {
 										Phone Number
 									</FormLabel>
 									<FormControl>
-										{/* <Input
-											placeholder="Enter your legal full name"
-											className="border-neutral-400 border-[1.5px] bg-[#E8F7FF] focus-visible:ring-offset-0 focus-visible:ring-0 focus-visible:border-primary-600 h-12"
-											{...field}
-										/> */}
 										<PhoneInput
 											defaultCountry="ng"
 											className="phone-number-input"
@@ -157,7 +152,7 @@ export default function UserInfo() {
 									</FormLabel>
 									<FormControl>
 										<Input
-											placeholder="Enter your legal full name"
+											placeholder="Referral code"
 											className="border-neutral-400 border-[1.5px] bg-[#E8F7FF] focus-visible:ring-offset-0 focus-visible:ring-0 focus-visible:border-primary-600 h-12"
 											{...field}
 										/>
