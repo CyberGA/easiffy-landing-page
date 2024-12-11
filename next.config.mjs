@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "easiffy.onrender.com",
+        hostname: "api.easiffy.com",
         port: "",
         pathname: "/resources/**",
       },
